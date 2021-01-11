@@ -13,3 +13,11 @@ Video Link: https://youtu.be/lNKd5DvvKX4
 4. Install all required node packages: ```npm install```
 
 5. Execute the App: ```npm start```
+
+## Applicatino structure 
+
+*Data Collection folder* holds the python files that were run on a Rspberry Pi. Screen was used to enable simultaneous collection and cronjobs used to back up data at the start of every day 
+
+*Data folder* contains exampls of collected data 
+
+
