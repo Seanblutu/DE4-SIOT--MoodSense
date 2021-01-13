@@ -22,11 +22,11 @@ var Ngrok = "d1aaca84aeb4" ;
 var result = (time) => fetch('https://'+Ngrok+'.ngrok.io/index?time='+time, {
     method: 'get',
   }).then(function(response) {
-    return response.json(); // pass the data as promise to next then block
+    return response.json(); // pass the index as promise to next then block
   }).then(function(data) {
     var moodId = data.index;
   
-    return fetch('https://'+Ngrok+'.ngrok.io/mood?index=' + moodId); // make a 2nd request and return a promise
+    return fetch('https://'+Ngrok+'.ngrok.io/mood?index=' + moodId); // make a 2nd request and return mood
   })
   .then(function(response) {
     return response.json();
