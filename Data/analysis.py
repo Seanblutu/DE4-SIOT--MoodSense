@@ -9,18 +9,18 @@ from sklearn.metrics import r2_score, median_absolute_error, mean_absolute_error
 from sklearn.metrics import median_absolute_error, mean_squared_error, mean_squared_log_error
 
 
-file_path = "/University/Year 4/Sensing and IOT/Files/twitter/master2.csv"
-light_path = "/University/Year 4/Sensing and IOT/Files/Light/master2.csv"
-dataset = pd.read_csv(file_path, low_memory=False)
+Sent_path = "/University/Year 4/Sensing and IOT/Files/twitter/Sentiment_Data.csv"
+light_path = "/University/Year 4/Sensing and IOT/Files/Light/Luminance_Data.csv"
+Sentiment = pd.read_csv(Sent_path, low_memory=False)
 Light = pd.read_csv(light_path,low_memory=False)
 
 #time_index = pd.date_range('2020-12-22 00:12', periods=len(dataset), freq = '5 min')
 #time_index2 = pd.date_range('2020-12-22 00:12', periods=len(Light), freq = '5 min')
-time_index = pd.DatetimeIndex(pd.to_datetime(dataset['Time'], dayfirst=True))
+time_index = pd.DatetimeIndex(pd.to_datetime(Sentiment['Time'], dayfirst=True))
 time_index2 = pd.DatetimeIndex(pd.to_datetime(Light['Time'], dayfirst=True))
-dataset=dataset.set_index(time_index)
+Sentiment=Sentiment.set_index(time_index)
 Light = Light.set_index(time_index2)
-dataset = dataset.drop(['Time'], axis =1)
+Sentiment = Sentiment.drop(['Time'], axis =1)
 Light = Light.drop(['Time'], axis =1)
 #print(dataset.iloc[np.r_[0:5,-5:0]].iloc[:,0])
 
